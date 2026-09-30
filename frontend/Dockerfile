@@ -1,5 +1,8 @@
 FROM node:24-alpine
 
+# alpine にはタイムゾーンのデータが入っていないため、TZ=Asia/Tokyo を効かせるために追加する
+RUN apk add --no-cache tzdata
+
 WORKDIR /app
 
 # パッケージを先に入れる（package.json が変わらなければ、この層はキャッシュが再利用される）
