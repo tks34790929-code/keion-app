@@ -1,0 +1,6 @@
+fastapi==0.142.1
+uvicorn==0.54.0
+sqlalchemy==2.1.1
+pymysql==1.2.3
+# MySQL 8 の標準の認証方式（caching_sha2_password）で PyMySQL が接続するために必要
+cryptography==50.0.1
