@@ -4,3 +4,10 @@ sqlalchemy==2.1.1
 pymysql==1.2.3
 # MySQL 8 の標準の認証方式（caching_sha2_password）で PyMySQL が接続するために必要
 cryptography==50.0.1
+# DB のテーブルの作成・変更（マイグレーション）
+alembic==1.20.0
+
+# ===== テスト用 =====
+pytest==9.1.1
+# FastAPI の TestClient が内部で使う
+httpx==0.28.1
