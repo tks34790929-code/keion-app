@@ -5,11 +5,13 @@ from fastapi import FastAPI, HTTPException
 from sqlalchemy import text
 from sqlalchemy.exc import SQLAlchemyError
 
+from app import reservations
 from app.db import engine
 
 JST = ZoneInfo("Asia/Tokyo")
 
 app = FastAPI(title="keion-app API")
+app.include_router(reservations.router)
 
 
 @app.get("/api/hello")
