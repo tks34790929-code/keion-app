@@ -3,15 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>keion-app</title>
+    <title>練習室予約 - keion-app</title>
   </head>
   <body>
-    <h1>keion-app</h1>
-    <ul>
-      <li>API: <span id="message">読み込み中…</span></li>
-      <li>サーバー時刻: <span id="now">読み込み中…</span></li>
-      <li>DB: <span id="db">読み込み中…</span></li>
-    </ul>
+    <main>
+      <h1>練習室予約</h1>
+
+      <label class="field">
+        日付
+        <input type="date" id="date" required />
+      </label>
+
+      <section>
+        <h2>予約状況</h2>
+        <p class="hint">練習室を使えるのは 7:00〜22:00 です。</p>
+        <ul id="reservation-list" class="reservation-list"></ul>
+        <p id="list-message" class="message"></p>
+      </section>
+
+      <section>
+        <h2>個人練を予約する</h2>
+        <form id="reserve-form">
+          <p class="hint">上で選んだ日（<span id="form-date"></span>）に予約します。</p>
+          <label class="field">
+            名前
+            <input type="text" id="name" maxlength="50" autocomplete="name" required />
+          </label>
+          <div class="times">
+            <label class="field">
+              開始
+              <select id="start-time"></select>
+            </label>
+            <span class="tilde">〜</span>
+            <label class="field">
+              終了
+              <select id="end-time"></select>
+            </label>
+          </div>
+          <button type="submit" id="submit">予約する</button>
+          <p id="form-message" class="message" role="status"></p>
+        </form>
+      </section>
+    </main>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

@@ -1,0 +1,135 @@
+/* スマートフォンで見やすい最小限の見た目 */
+
+:root {
+  --text: #1f2328;
+  --muted: #59636e;
+  --border: #d1d9e0;
+  --accent: #0969da;
+  --error: #cf222e;
+  --bg: #ffffff;
+  --bg-sub: #f6f8fa;
+  font-family: system-ui, -apple-system, "Hiragino Sans", "Yu Gothic UI", sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  max-width: 32rem;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+h1 {
+  font-size: 1.4rem;
+  margin: 0 0 16px;
+}
+
+h2 {
+  font-size: 1.1rem;
+  margin: 24px 0 4px;
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 0.875rem;
+  margin: 0 0 8px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.875rem;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+/* 16px 未満だと iPhone で入力欄を押したときに画面が拡大されるため */
+input,
+select,
+button {
+  font: inherit;
+  font-size: 16px;
+  color: var(--text);
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+}
+
+.times {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.times .field {
+  flex: 1;
+}
+
+.tilde {
+  padding-top: 8px;
+}
+
+button {
+  width: 100%;
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.reservation-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.reservation-list li {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg-sub);
+  margin-bottom: 6px;
+}
+
+.reservation-list .time {
+  font-variant-numeric: tabular-nums;
+  font-weight: bold;
+}
+
+.reservation-list .kind {
+  font-size: 0.75rem;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0 6px;
+}
+
+/* 長い名前は省略せず折り返す */
+.reservation-list .name {
+  overflow-wrap: anywhere;
+}
+
+.message {
+  min-height: 1.6em;
+  margin: 8px 0 0;
+}
+
+.message.error {
+  color: var(--error);
+}
